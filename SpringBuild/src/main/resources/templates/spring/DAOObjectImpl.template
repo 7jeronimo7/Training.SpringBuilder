@@ -1,0 +1,67 @@
+<<META
+extention="java"
+description="Creates the ObjectDAOImpl"
+subdirectory="data"
+objectNameSuffix="DAOImpl"
+requiredTemplates=""
+showInList="no"
+>>
+// --------------------------------------------------------------------------
+//
+// Module: <<ObjectName>>DAOImpl.java
+//
+// Description: Spring DAO Implementation for the <<tableName>> table.
+//
+// Special Logic:
+//
+// Copyright <<currentYear>> <<copyright>>
+// All Rights Reserved.
+// --------------------------------------------------------------------------
+//
+//                    *** MODIFICATION LOG ***
+//
+//  Date       Project   Developer      Description
+// ---------- --------- -------------- --------------------------------------
+// <<todaysDate>> <<projectID>> <<author>>     Initial Release
+// --------------------------------------------------------------------------
+package <<packageName>>.dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query; //for Hibernate 5.2
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import <<packageName>>.entity.<<ObjectName>>;
+
+@Repository
+public class <<ObjectName>>DAOImpl implements <<ObjectName>>DAO {
+
+	
+	// need to inject the session factory
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	@Override
+	@Transactional
+	public List<<<ObjectName>>> get<<ObjectName>>s() {
+		
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// create a query
+		//Query<<<ObjectName>>> theQuery = currentSession.createQuery("from <<ObjectName>> order by name", <<ObjectName>>.class); // change name to PK(s)
+		Query<<<ObjectName>>> theQuery = currentSession.createQuery("from <<ObjectName>>", <<ObjectName>>.class);
+		theQuery.setMaxResults(50); //TODO Remove, but for now limit it to 50 rows for performance
+		
+		// execute query and get result list
+		List<<<ObjectName>>> <<objectName>>s = theQuery.getResultList();
+		
+		// return the results
+		return <<objectName>>s;
+	}
+
+}

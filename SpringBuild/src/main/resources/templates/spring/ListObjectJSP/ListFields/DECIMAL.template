@@ -1,0 +1,1 @@
+				<td><fmt:formatNumber type="number" minFractionDigits="2" value="${temp<<ObjectName>>s.<<columnName>>}"/></td>

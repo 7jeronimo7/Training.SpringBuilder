@@ -1,0 +1,36 @@
+<<META
+extention="java"
+description="Creates the DataObject"
+subdirectory="data"
+objectNameSuffix="Data"
+requiredTemplates=""
+showInList="no"
+>>
+package <<packageName>>.data;
+
+import com.ncgicorp.environment.db.ObjectProperties;
+import com.ncgicorp.exception.BusinessRuleException;
+import com.ncgicorp.util.GenUtil;
+import java.util.StringTokenizer;
+import java.util.Date;
+import java.math.*;
+
+/**
+ * This type encapsulates the data from a specific row of the <<tableName>> table.
+ * Creation date: <<todaysDate>>
+ * @author: <<author>>
+ */
+public class <<ObjectName>>Data extends com.ncgicorp.environment.DataObject {
+	// Instance Initializer
+	{
+		setPrimaryKeyFieldName("<<primaryKeyColumnName>>");
+	}
+public <<ObjectName>>Data() throws Exception{
+	super();
+}
+public <<ObjectName>>Data(ObjectProperties fieldValuesIn) throws Exception{
+	super();
+	fieldValues = fieldValuesIn;
+}
+<<columnLoop templateDirectory="getNsetMethods">>
+}

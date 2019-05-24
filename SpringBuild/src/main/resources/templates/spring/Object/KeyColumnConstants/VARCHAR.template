@@ -1,0 +1,4 @@
+
+	@Id
+	@Column(name="<<COLUMN_NAME>>")
+	private String <<columnName>>;

@@ -1,0 +1,5 @@
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="<<COLUMN_NAME>>")
+	private int <<columnName>>;

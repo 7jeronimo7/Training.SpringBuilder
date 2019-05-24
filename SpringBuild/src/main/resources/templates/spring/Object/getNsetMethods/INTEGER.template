@@ -1,0 +1,8 @@
+
+	public String get<<ColumnName>>() {
+		return <<columnName>>;
+	}
+
+	public void set<<ColumnName>>(int <<columnName>>) {
+		this.<<columnName>> = <<columnName>>;
+	}

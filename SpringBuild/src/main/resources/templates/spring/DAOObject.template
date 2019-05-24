@@ -1,0 +1,39 @@
+<<META
+extention="java"
+description="Creates the DAOObject"
+subdirectory="data"
+objectNameSuffix="DAO"
+requiredTemplates=""
+showInList="no"
+>>
+// --------------------------------------------------------------------------
+//
+// Module: <<ObjectName>>DAO.java
+//
+// Description: Spring DAO interface for the <<tableName>> table.
+//
+// Special Logic:
+//
+// Copyright <<currentYear>> <<copyright>>
+// All Rights Reserved.
+// --------------------------------------------------------------------------
+//
+//                    *** MODIFICATION LOG ***
+//
+//  Date       Project   Developer      Description
+// ---------- --------- -------------- --------------------------------------
+// <<todaysDate>> <<projectID>> <<author>>     Initial Release
+// --------------------------------------------------------------------------
+package <<packageName>>.dao;
+
+import java.util.List;
+
+import <<packageName>>.entity.<<ObjectName>>;
+
+public interface <<ObjectName>>DAO {
+	
+	public List<<<ObjectName>>> get<<ObjectName>>s();
+
+}
+
+

@@ -1,0 +1,8 @@
+
+	public String get<<ColumnName>>() {
+		return <<columnName>>;
+	}
+
+	public void set<<ColumnName>>(Timestamp <<columnName>>) {
+		this.<<columnName>> = <<columnName>>;
+	}

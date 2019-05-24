@@ -1,0 +1,2 @@
+				<td><fmt:formatDate pattern="MM/dd/yyyy" value="${temp<<ObjectName>>s.<<columnName>>}"/> </td>
+				<!-- <td><fmt:formatDate pattern="MM/dd/yyyy HH:mm:ss z" value="${temp<<ObjectName>>s.<<columnName>>}"/> </td> -->

@@ -1,0 +1,59 @@
+<<META
+extention="java"
+description="Creates the Object"
+subdirectory="data"
+objectNameSuffix=""
+requiredTemplates=""
+showInList="no"
+>>
+// --------------------------------------------------------------------------
+//
+// Module: <<ObjectName>>.java
+//
+// Description: Entity class for the <<tableName>> table.
+//
+// Special Logic:
+//
+// Copyright <<currentYear>> <<copyright>>
+// All Rights Reserved.
+// --------------------------------------------------------------------------
+//
+//                    *** MODIFICATION LOG ***
+//
+//  Date       Project   Developer      Description
+// ---------- --------- -------------- --------------------------------------
+// <<todaysDate>> <<projectID>> <<author>>     Initial Release
+// --------------------------------------------------------------------------
+package <<packageName>>.entity;
+
+//NOTE: since I have a distinct list of column types, I could auto generate the import statements...
+import java.util.*; //not sure about
+import java.math.*; // not sure about
+import java.math.BigDecimal; // not sure about
+import java.sql.Timestamp; // not sure about
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="<<tablename>>")
+public class <<ObjectName>> {
+
+// Setup Primary Key column(s)
+<<primaryKeyColumnLoop templateDirectory="KeyColumnConstants">>
+
+// Define normal columns
+<<nonPrimaryKeyColumnLoop templateDirectory="ColumnDeclarations">>
+
+	public <<ObjectName>> {
+		; // default constructor
+	}
+
+<<columnLoop templateDirectory="getNsetMethods">>
+
+}
+

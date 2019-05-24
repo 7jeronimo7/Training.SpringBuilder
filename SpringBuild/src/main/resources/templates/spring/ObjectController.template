@@ -1,0 +1,60 @@
+<<META
+extention="java"
+description="Creates the ObjectController"
+subdirectory="data"
+objectNameSuffix="Controller"
+requiredTemplates=""
+showInList="no"
+>>
+// --------------------------------------------------------------------------
+//
+// Module: <<ObjectName>>Controller.java
+//
+// Description: Spring Controller for the <<tableName>> table.
+//
+// Special Logic:
+//
+// Copyright <<currentYear>> <<copyright>>
+// All Rights Reserved.
+// --------------------------------------------------------------------------
+//
+//                    *** MODIFICATION LOG ***
+//
+//  Date       Project   Developer      Description
+// ---------- --------- -------------- --------------------------------------
+// <<todaysDate>> <<projectID>> <<author>>     Initial Release
+// --------------------------------------------------------------------------
+package <<packageName>>.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import <<packageName>>.dao.<<ObjectName>>DAO;
+import <<packageName>>.entity.<<ObjectName>>;
+
+@Controller
+@RequestMapping("/<<objectName>>")
+public class <<ObjectName>>Controller {
+
+	// need to inject the <<objectName>> dao
+	@Autowired
+	private <<ObjectName>>DAO <<objectName>>DAO;
+	
+	@RequestMapping("/list")
+	public String list<<ObjectName>>(Model theModel) {
+	
+		// get <<objectName>>s from the dao
+		List<<<ObjectName>>> the<<ObjectName>> = <<objectName>>DAO.get<<ObjectName>>s();
+		
+		// add the <<objectName>> to the model
+		theModel.addAttribute("<<objectName>>s", the<<ObjectName>>);
+		
+		return "list-<<objectName>>";	
+	}
+
+}
+
